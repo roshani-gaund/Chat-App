@@ -1,0 +1,22 @@
+.chat-container {
+  height: calc(100vh - 64px);
+  /* navbar height minus */
+}
+
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+}
+@keyframes bounceIcon {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-12px);
+  }
+}
+
+
