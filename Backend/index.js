@@ -14,7 +14,8 @@ const MONGO_URI = process.env.MONGO_URL;
 const __dirname=path.resolve();
 app.use(cors(
      {
-        origin:"http://localhost:5173",
+        //  origin:"http://localhost:5173",    
+        origin:"*",   
         methods:["GET","POST","PUT","DELETE"],
         credentials:true,
     }
@@ -38,13 +39,11 @@ app.get('/', (req, res) => {
 );
 app.use('/api/users', userRouter);
  app.use('/api/message', messageRouter);
-if(process.env.NODE_ENV==="production"){
-    app.use(express.static(path.join(__dirname,"../Frontend/dist")));
 
-    app.get("*",(req,res)=>{
-        res.sendFile(path.join(__dirname,"../Frontend","dist","index.html"));
+    app.use(express.static(path.join(__dirname,"../Frontend/dist")));
+    app.use((req,res)=>{
+        res.sendFile(path.join(__dirname,"../Frontend/dist/index.html"));
     })
-}
 
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
