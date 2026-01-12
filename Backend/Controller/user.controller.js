@@ -65,7 +65,9 @@ res.status(200).json({
    username:user.username,
     email:user.email,
     profilePicture:user.profilePicture,
+   generateToken,
         });
+
 
     }catch (error) {
         console.log("error in login controller",error.message);
