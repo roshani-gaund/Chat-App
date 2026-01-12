@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 );
 app.use('/api/users', userRouter);
  app.use('/api/message', messageRouter);
-app.use(express.static(path.join(__dirname, "Frontend/dist")));
+// app.use(express.static(path.join(__dirname, "Frontend/dist")));
 
 // app.use(
 //   res.sendFile(path.join(__dirname, "Frontend/dist/index.html"));

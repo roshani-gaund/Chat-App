@@ -14,11 +14,7 @@ export const useChatStore = create((set, get) => ({
     const token = useAuthStore.getState().token;
     set({ isUsersLoading: true });
     try {
-      const res = await API.get("/message/users",{
-        headers: {
-    Authorization: `Bearer ${token}`,
-  },
-      });
+      const res = await API.get("/message/users");
       set({ users: res.data });
     } catch (error) {
         console.log("Get users error:", error);
