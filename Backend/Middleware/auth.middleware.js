@@ -19,6 +19,8 @@ if (!decoded) {
 
         req.user = user;
         next();
+        console.log("Cookies:", req.cookies);
+
     } catch (error) {
         console.log("error in protectRoute",error.message);
         return res.status(401).json({ message: "Unauthorized middleware route error" });

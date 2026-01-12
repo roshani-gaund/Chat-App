@@ -12,18 +12,19 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URL;
 const __dirname=path.resolve();
+app.set("trust proxy", 1);
 app.use(cors(
-     {
-         origin: [
-    "https://chat-app-chi-olive-75.vercel.app", // frontend (PRODUCTION)
-    "http://localhost:5173"                     // frontend (LOCAL)
-  ],         
-     methods:["GET","POST","PUT","DELETE"],
+    {
+        origin: [
+            "https://chat-app-chi-olive-75.vercel.app", // frontend (PRODUCTION)
+            "http://localhost:5173"                     // frontend (LOCAL)
+        ],         
+        methods:["GET","POST","PUT","DELETE"],
         credentials:true,
     }
 ));
+app.use(cookieParser());
 app.use(express.json());
-app.use(cookieParser())
 app.use(express.urlencoded({limit:"10mb", extended: true }));
 
 //connect to MongoDB
