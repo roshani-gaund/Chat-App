@@ -14,8 +14,7 @@ const MONGO_URI = process.env.MONGO_URL;
 const __dirname=path.resolve();
 app.use(cors(
      {
-         origin:"http://localhost:5173",    
-        // origin:"*",   
+         origin:true,  
         methods:["GET","POST","PUT","DELETE"],
         credentials:true,
     }
