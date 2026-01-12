@@ -14,7 +14,7 @@ const MONGO_URI = process.env.MONGO_URL;
 const __dirname=path.resolve();
 app.use(cors(
      {
-         origin:"https://chat-app-pif3.onrender.com",  
+         origin:"chat-app-chi-olive-75.vercel.app",  
         methods:["GET","POST","PUT","DELETE"],
         credentials:true,
     }
