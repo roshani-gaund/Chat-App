@@ -13,7 +13,11 @@ export const useChatStore = create((set, get) => ({
   getUsers: async () => {
     set({ isUsersLoading: true });
     try {
-      const res = await API.get("/message/users");
+      const res = await API.get("/message/users",{
+        headers: {
+    Authorization: `Bearer ${token}`,
+  },
+      });
       set({ users: res.data });
     } catch (error) {
       toast.error(error.response.data.message);
