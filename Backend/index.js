@@ -6,12 +6,12 @@ import userRouter from './Route/user.Route.js';
 import { app, server } from './lib/socket.js';
 import messageRouter from './Route/message.js';
 import cookieParser from 'cookie-parser';
-import path from "path";
+
 dotenv.config();    
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URL;
-const __dirname=path.resolve();
+
 app.set("trust proxy", 1);
 app.use(cors(
     {
