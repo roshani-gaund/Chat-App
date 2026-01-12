@@ -43,9 +43,9 @@ app.use('/api/users', userRouter);
  app.use('/api/message', messageRouter);
 app.use(express.static(path.join(__dirname, "Frontend/dist")));
 
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "Frontend/dist/index.html"));
-});
+// app.use(
+//   res.sendFile(path.join(__dirname, "Frontend/dist/index.html"));
+// );
 
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
