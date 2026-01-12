@@ -16,10 +16,8 @@ if (!decoded) {
         if (!user) {
             return res.status(401).json({ message: "User not found" });
         }
-
-        req.user = user;
+   req.user = user;
         next();
-        console.log("Cookies:", req.cookies);
 
     } catch (error) {
         console.log("error in protectRoute",error.message);
