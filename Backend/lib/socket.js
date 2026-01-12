@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-      origin:["https://chat-app-pif3.onrender.com",
+      origin:["https://chat-app-chi-olive-75.vercel.app",
         "http://localhost:5173"]
     }
 });
