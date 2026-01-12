@@ -14,7 +14,11 @@ const MONGO_URI = process.env.MONGO_URL;
 const __dirname=path.resolve();
 app.use(cors(
      {
-         origin:"chat-app-chi-olive-75.vercel.app",  
+         origin: [
+    "https://chat-app-chi-olive-75.vercel.app", // frontend (PRODUCTION)
+    "http://localhost:5173"                     // frontend (LOCAL)
+  ],
+          
         methods:["GET","POST","PUT","DELETE"],
         credentials:true,
     }
