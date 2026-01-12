@@ -2,7 +2,8 @@ import jwt from "jsonwebtoken";
 import User from "../Modal/user.modal.js";
 
 export const protectRoute = async (req, res, next) =>
-    {console.log("Cookies:", req.cookies);
+    {
+        
 
     try {  
         const token = req.cookies.jwt;
@@ -20,6 +21,7 @@ if (!decoded) {
             return res.status(401).json({ message: "User not found" });
         }
    req.user = user;
+   console.log("Cookies:", req.cookies);
         next();
 
     } catch (error) {
