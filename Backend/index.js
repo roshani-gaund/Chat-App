@@ -17,9 +17,8 @@ app.use(cors(
          origin: [
     "https://chat-app-chi-olive-75.vercel.app", // frontend (PRODUCTION)
     "http://localhost:5173"                     // frontend (LOCAL)
-  ],
-          
-        methods:["GET","POST","PUT","DELETE"],
+  ],         
+        // methods:["GET","POST","PUT","DELETE"],
         credentials:true,
     }
 ));
@@ -42,7 +41,11 @@ app.get('/', (req, res) => {
 );
 app.use('/api/users', userRouter);
  app.use('/api/message', messageRouter);
+app.use(express.static(path.join(__dirname, "Frontend/dist")));
 
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "Frontend/dist/index.html"));
+});
 
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

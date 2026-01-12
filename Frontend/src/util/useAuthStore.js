@@ -2,7 +2,7 @@ import {create} from "zustand";
 import API from "./api";
 import toast from "react-hot-toast";
 import {io} from "socket.io-client";
-const BASE_URL=" https://chat-app-pif3.onrender.com";
+const BASE_URL="https://chat-app-pif3.onrender.com";
  export const useAuthStore=create((set,get)=>({
     authUser:null,
     isSignup:false,
