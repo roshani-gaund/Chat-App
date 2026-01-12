@@ -12,5 +12,7 @@ res.cookie("jwt",token,{
      domain: ".onrender.com", 
     secure:process.env.NODE_ENV !="development"
 });
+
+
 return token; 
 }

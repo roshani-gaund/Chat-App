@@ -2,7 +2,8 @@ import jwt from "jsonwebtoken";
 import User from "../Modal/user.modal.js";
 
 export const protectRoute = async (req, res, next) => {
-    try {
+    try {   console.log("Headers:", req.headers); // 👈 yahin
+    console.log("Cookies:", req.cookies);
         const token = req.cookies.jwt;
         if (!token) {
             return res.status(401).json({ message: "Unauthorized No token provided" });
@@ -14,6 +15,7 @@ if (!decoded) {
         const user = await User.findById(decoded.userId).select("-password");
 
         if (!user) {
+           
             return res.status(401).json({ message: "User not found" });
         }
    req.user = user;
