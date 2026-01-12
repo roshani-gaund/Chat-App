@@ -8,8 +8,8 @@ const io = new Server(server, {
     cors: {
       origin:["https://chat-app-chi-olive-75.vercel.app",
         "http://localhost:5173"],
-          credentials: true,   
-    methods: ["GET", "POST"]
+       credentials: true,   
+        methods: ["GET", "POST"]
     }
 });
 export function getReceiverSocketId(userId) {

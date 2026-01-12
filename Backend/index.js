@@ -18,7 +18,7 @@ app.use(cors(
     "https://chat-app-chi-olive-75.vercel.app", // frontend (PRODUCTION)
     "http://localhost:5173"                     // frontend (LOCAL)
   ],         
-        // methods:["GET","POST","PUT","DELETE"],
+     methods:["GET","POST","PUT","DELETE"],
         credentials:true,
     }
 ));
