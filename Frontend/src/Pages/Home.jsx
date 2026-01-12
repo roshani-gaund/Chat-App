@@ -6,7 +6,7 @@ import ChatContainer from "../component/ChatContainer";
 const Home = () => {
   const {selectedUser}=useChatStore();
 
-  console.log("cookies:", req.cookies);
+ 
 
  return(
 <div className="h-screen bg-gray-100" style={{paddingTop:"50px"}}>
