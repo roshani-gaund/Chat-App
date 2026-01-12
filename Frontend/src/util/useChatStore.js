@@ -11,6 +11,7 @@ export const useChatStore = create((set, get) => ({
   isMessagesLoading: false,
 
   getUsers: async () => {
+    const token = useAuthStore.getState().token;
     set({ isUsersLoading: true });
     try {
       const res = await API.get("/message/users",{
@@ -21,7 +22,7 @@ export const useChatStore = create((set, get) => ({
       set({ users: res.data });
     } catch (error) {
         console.log("Get users error:", error);
-      toast.error(error?.response?.data?.message|| "Failed to load users");
+      toast.error(message,"Failed to load users");
     } finally {
       set({ isUsersLoading: false });
     }
