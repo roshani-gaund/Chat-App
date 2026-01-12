@@ -20,7 +20,8 @@ export const useChatStore = create((set, get) => ({
       });
       set({ users: res.data });
     } catch (error) {
-      toast.error(error.response.data.message);
+        console.log("Get users error:", error);
+      toast.error(error?.response?.data?.message|| "Failed to load users");
     } finally {
       set({ isUsersLoading: false });
     }
